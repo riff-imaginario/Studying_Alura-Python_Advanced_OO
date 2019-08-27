@@ -4,6 +4,9 @@ class Programa:
         self.ano   = ano
         self._like = 0
 
+    def __str__(self):
+        return f'{self._nome} - {self.ano} - {self._like} Likes'
+
     @property
     def nome(self):
         return self._nome
@@ -28,6 +31,9 @@ class Filme(Programa):
         self.ano     = ano
         self.duracao = duracao
         self._like   = 0
+
+    def __str__(self):
+        return f'{self._nome} - {self.ano} - {self.duracao} - {self._like} Likes'
 
     @property
     def nome(self):
@@ -57,6 +63,9 @@ class Serie(Programa):
         self.temporadas = temporadas
         self._like      = 0
 
+    def __str__(self):
+        return f'{self._nome} - {self.ano} - {self.temporadas} - {self._like} Likes'
+
     @property
     def nome(self):
         return self.__nome
@@ -84,4 +93,4 @@ atlanta.dar_like()
 filmes_e_series = [vingadores, atlanta]
 
 for programa in filmes_e_series:
-    programa.imprime()
+    print(programa)
